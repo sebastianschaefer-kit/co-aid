@@ -8,3 +8,55 @@
 // @use 'vuetify' with (
 //   $color-pack: false
 // );
+.v-toolbar__content {
+  margin-inline-start: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: none;
+}
+@media (min-width: 960px) {
+  .v-toolbar__content, .v-container {
+    max-width: 960px !important;
+  }
+}
+@media (min-width: 1280px) {
+  .v-toolbar__content, .v-container  {
+    max-width: 1200px !important;
+  }
+}
+@media (min-width: 1920px) {
+  .v-toolbar__content, .v-container  {
+    max-width: 1800px !important;
+  }
+}
+@media (min-width: 2560px) {
+  .v-toolbar__content, .v-container  {
+    max-width: 2400px !important;
+  }
+}
+.v-row {
+  margin: 0px !important;
+}
+.v-col {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+.v-container > .v-row {
+  margin: -16px !important;
+}
+.v-container > .v-row > .v-col {
+  padding: 16px !important;
+}
+.text-container {
+  gap: 8px;
+  display: flex !important;
+  flex-direction: column !important;
+}
+.text-normal {
+  color: #455A64;
+  text-align: justify !important;
+}
+.text-hl {
+  color: #4CAF50;
+  font-weight: 500 !important;
+}
