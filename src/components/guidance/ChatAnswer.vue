@@ -58,7 +58,7 @@ export default {
         this.info[field] = this.value.implications[field]
       }
 
-      if (!this.interaction.answer) {
+      if (!this.interaction.answer || this.interaction.answer.length === 0) {
         this.showNextQuestion();
       }
 

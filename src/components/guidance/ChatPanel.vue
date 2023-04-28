@@ -17,7 +17,7 @@ import { mapState } from 'pinia';
 import { useStateStore } from '@/store/state';
 
 export default {
-  name: "ChatInterface",
+  name: "ChatPanel",
   computed: {
     ...mapState(useStateStore, ['interactions'])
   }
