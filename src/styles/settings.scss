@@ -8,15 +8,15 @@
 // @use 'vuetify' with (
 //   $color-pack: false
 // );
-.v-toolbar__content {
-  margin-inline-start: 0px;
-  margin-left: auto;
-  margin-right: auto;
-  transition: none;
+.v-application {
+  height: 100vh;
+}
+.v-main {
+  height: 100%;
 }
 @media (min-width: 960px) {
   .v-toolbar__content, .v-container {
-    max-width: 960px !important;
+    max-width: unset !important;
   }
 }
 @media (min-width: 1280px) {
@@ -26,13 +26,25 @@
 }
 @media (min-width: 1920px) {
   .v-toolbar__content, .v-container  {
-    max-width: 1800px !important;
+    max-width: 1400px !important;
   }
 }
 @media (min-width: 2560px) {
   .v-toolbar__content, .v-container  {
     max-width: 2400px !important;
   }
+}
+.v-toolbar__content > .v-toolbar-title {
+  margin-inline-start: 0px;
+}
+.v-toolbar__content {
+  margin-inline-start: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: none;
+}
+.v-container {
+  padding: 0px !important;
 }
 .v-row {
   margin: 0px !important;
@@ -41,10 +53,8 @@
   margin: 0px !important;
   padding: 0px !important;
 }
-.v-container > .v-row {
-  margin: -16px !important;
-}
-.v-container > .v-row > .v-col {
+.v-toolbar .v-container > .v-row > .v-col,
+.v-main > .v-container > .v-row > .v-col {
   padding: 16px !important;
 }
 .text-container {

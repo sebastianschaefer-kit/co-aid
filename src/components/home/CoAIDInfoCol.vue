@@ -14,8 +14,8 @@
       </div>
     </div>
     <div class="d-flex flex-column" style="gap: 20px;">
-      <StartButton title="Guide me!" subtitle="Answer questions and let us guide you through your Design Process"></StartButton>
-      <StartButton title="Explore" subtitle="Freely explore the Design Patterns"></StartButton>
+      <StartButton title="Guide me!" subtitle="Answer questions and let us guide you through your Design Process" tabName="guidance"></StartButton>
+      <StartButton title="Explore" subtitle="Freely explore the Design Patterns" tabName="filters"></StartButton>
     </div>
   </div>
 </template>

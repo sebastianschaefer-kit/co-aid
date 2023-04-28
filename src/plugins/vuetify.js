@@ -31,4 +31,15 @@ export default createVuetify({
       mdi,
     }
   },
+  defaults: {
+    VBtn: {
+      variant: 'tonal'
+    },
+    VCard: {
+      variant: 'tonal'
+    },
+    VTabs: {
+      variant: 'tonal'
+    },
+  }
 })
