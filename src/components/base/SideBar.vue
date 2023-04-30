@@ -27,20 +27,21 @@
         :key="items[0].key"
         :value="items[0].key"
       >
-        <ChatInterface></ChatInterface>
+        <ChatPanel></ChatPanel>
       </v-window-item>
       <v-window-item
         :key="items[1].key"
         :value="items[1].key"
       >
-        <!-- <FilterInterface></FilterInterface> -->
+        <FilterPanel></FilterPanel>
       </v-window-item>
     </v-window>
   </v-sheet>
 </template>
 
 <script setup>
-import ChatInterface from "@/components/guidance/ChatInterface.vue"
+import ChatPanel from "@/components/guidance/ChatPanel.vue"
+import FilterPanel from "@/components/filter/FilterPanel.vue";
 </script>
 
 <script>

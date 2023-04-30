@@ -44,7 +44,7 @@ export default {
     }
   },
   computed: {
-    ...mapWritableState(useStateStore, ["info"])
+    ...mapWritableState(useStateStore, ["info", "filters"])
   },
   watch: {
     value() {
@@ -54,8 +54,38 @@ export default {
   methods: {
     ...mapActions(useStateStore, ["showNextQuestion", "setAnswer"]),
     handleUpdate() {
-      for (let field in this.value.implications) {
-        this.info[field] = this.value.implications[field]
+      let info;
+      let filters;
+      if (this.interaction.multiple) {
+        let answerList = this.value.map(x => this.interaction.answers[x]);
+        info = {};
+        filters = {};
+
+        for (let answer of answerList) {
+          for (let field in answer.info) {
+            if (!Array.isArray(info[field])) info[field] = [];
+            info[field].push(answer.info[field]);
+          }
+
+          for (let field in answer.filters) {
+            if (!Array.isArray(filters[field])) filters[field] = [];
+            filters[field].push(answer.filters[field]);
+          }
+        }
+
+
+      } else {
+        let answer = this.interaction.answers[this.value];
+        info = answer.info;
+        filters = answer.filters;
+      }
+      
+      for (let field in info) {
+        this.info[field] = info[field]
+      }
+
+      for (let field in filters) {
+        this.filters[field] = filters[field]
       }
 
       if (!this.interaction.answer || this.interaction.answer.length === 0) {

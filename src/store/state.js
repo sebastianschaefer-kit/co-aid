@@ -13,12 +13,18 @@ export const useStateStore = defineStore('state', {
       aiGreaterHuman: undefined,
       corErrors: undefined,
       adherenceInvestigated: undefined,
-      // following are more like sorters and filters
-      taskType: undefined,
-      dataType: undefined,
+    },
+    filters: {
+      perspective: ["ds", "ux"],
+      taskType: ["reg", "class", "det"],
+      dataType: ["tab", "img", "text"],
       aiLiteracy: undefined,
     },
-    //filters, sorters
+    sorters: {
+      comPot: undefined,
+      aiAdherence: undefined,
+      diverseUsers: undefined,
+    }
   }),
   getters: {
     currentIndex() {

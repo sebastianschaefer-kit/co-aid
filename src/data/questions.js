@@ -2,12 +2,12 @@ export default [{
       question: "Hi there!\nI am going to be your assistant for the time. To help me understand what I can provide for you, I have to ask you some questions about your project. Is that in your intrest or do you want to eplore the Design Patterns for yourself?",
       answers: [{
         text: "Go on! Guide me.",
-        implications: {
+        info: {
           view: "guidance"
         }
       }, {
         text: "I want to explore for myself!",
-        implications: {
+        info: {
           view: "explore"
         }
       }]
@@ -15,22 +15,28 @@ export default [{
       question: "What is your role in this project?",
       answers: [{
           text: "I am working alone on it",
-          implications: {
+          info: {
             role: "full"
+          },
+          filters: {
+            perspective: ["ds", "ux"]
           }
         }, {
           text: "I am supervising/managing the project and want to have an overview over everything",
-          implications: {
+          info: {
             role: "manager"
+          },
+          filters: {
+            perspective: ["ds", "ux"]
           }
         }, {
           text: "I am a Data Scientist",
-          implications: {
+          info: {
             role: "datascienctist"
           }
         }, {
           text: "I am a UX/UI/frontend designer or developer",
-          implications: {
+          info: {
             role: "frontend"
           }
         }]
@@ -41,13 +47,16 @@ export default [{
       },
       answers: [{
         text: "Yes, only data-science perspective!",
-        implications: {
-          filter: "frontend"
+        filters: {
+          perspective: ["ds"]
         }
       }, {
         text: "No, show me everything!",
-        implications: {
-          sort: "frontend"
+        filters: {
+          perspective: ["ds", "ux"]
+        },
+        sort: {
+          perspective: "ds"
         }
       }]
     }, {
@@ -57,13 +66,16 @@ export default [{
       },
       answers: [{
         text: "Yes, only user-centric perspective!",
-        implications: {
-          filter: "datascienctist"
-        }
+        filters: {
+          perspective: ["ux"]
+        },
       }, {
         text: "No, show me everything!",
-        implications: {
-          sort: "datascienctist"
+        filters: {
+          perspective: ["ds", "ux"]
+        },
+        sort: {
+          perspective: "ux"
         }
       }]
     },  {
@@ -71,13 +83,11 @@ export default [{
       multiple: false,
       answers: [{
         text: "I have a problem/task I want to solve and am developing broad a concept right now",
-        implications: {}
       }, {
         text: "I already have a broad concept and am working on a more concrete design or implementation right now",
-        implications: {}
       }, {
         text: "I already have an operating system that I want to improve",
-        implications: {
+        info: {
           modelTrained: true
         }
       }]
@@ -88,12 +98,12 @@ export default [{
       },
       answers: [{
         text: "Yes",
-        implications: {
+        info: {
           modelTrained: true
         }
       }, {
         text: "No",
-        implications: {
+        info: {
           modelTrained: false
         }
       }]
@@ -104,18 +114,15 @@ export default [{
       },
       answers: [{
         text: "Yes",
-        implications: {
-          aiGreaterHuman: true
+        sort: {
+          aiAdherence: true
         }
       }, {
         text: "I don't know",
-        implications: {
-          aiGreaterHuman: undefined
-        }
       }, {
         text: "No",
-        implications: {
-          aiGreaterHuman: false
+        sort: {
+          aiAdherence: false
         }
       }]
     }, {
@@ -125,19 +132,22 @@ export default [{
       },
       answers: [{
         text: "Yes",
-        implications: {
-          corErrors: true
-        }
+        info: {
+          corErrors: true,
+        },
+        sort: {
+          compPot: true,
+        },
       }, {
         text: "I don't know",
-        implications: {
-          corErrors: undefined
-        }
       }, {
         text: "Yes",
-        implications: {
-          corErrors: false
-        }
+        info: {
+          corErrors: false,
+        },
+        sort: {
+          compPot: false,
+        },
       }]
     }, {
       question: "That is a good start, because having Complementarity Potential is so critical. If you want to further increase this potential consider these Design Patterns.",
@@ -174,12 +184,12 @@ export default [{
       },
       answers: [{
         text: "Yes",
-        implications: {
+        info: {
           adherenceInvestigated: true
         }
       }, {
         text: "No",
-        implications: {
+        info: {
           adherenceInvestigated: false
         }
       }]
@@ -191,122 +201,89 @@ export default [{
       },
       answers: [{
         text: "Users overly adhere to AI",
-        implications: {
-          //TODO
-        }
+        sort: {
+          aiAdherence: false,
+        },
       }, {
         text: "Both at a similar grade",
-        implications: {
-          //TODO
-        }
       }, {
         text: "Depends on the user",
-        implications: {
-          //TODO
+        sort: {
+          diverseUsers: true
         }
       }, {
         text: "Adherence to AI is too low",
-        implications: {
-          //TODO
-        }
+        sort: {
+          aiAdherence: true,
+        },
       }]
     }, {
-      question: "This can be very insightful to investigate. Usually it is a mixture of both and also very dependent on the user performing the task.\nAdvice: Try to view incorrect acceptance of AI advice seperately from incorrect self trust.",
+      question: "This can be very insightful to investigate. Usually it is a mixture of both and can also be very dependent on the user performing the task.\nAdvice: Try to view incorrect acceptance of AI advice seperately from incorrect self trust.",
       condition: {
         modelTrained: true,
         adherenceInvestigated: false        
       },
     }, {
       question: "Now I want to ask you some more questions about the task you want to solve.",
-      condition: {},
     }, {
       question: "How can the task(s) be classified?\nYou can select multiple types as well, if your task includes multiple different subtasks.",
-      condition: {},
       multiple: true,
       answers: [{
         text: "Value estimation (Regression)",
-        implications: {
-          taskType: "regression"
+        filters: {
+          taskType: "reg"
         }
       }, {
         text: "Classification",
-        implications: {
-          taskType: "classification"
+        filters: {
+          taskType: "class"
         }
       }, {
         text: "Detection",
-        implications: {
-          taskType: "detection"
+        filters: {
+          taskType: "det"
         }
       }]
     }, {
       question: "What are the data type(s) subject to this task?",
-      condition: {},
       multiple: true,
       answers: [{
         text: "Structured (tabular) data",
-        implications: {
-          dataType: "tabular"
+        filters: {
+          dataType: "tab"
         }
       }, {
         text: "Images",
-        implications: {
-          dataType: "image"
+        filters: {
+          dataType: "img"
         }
       }, {
         text: "Textual data",
-        implications: {
+        filters: {
           dataType: "text"
         }
       }]
     }, {
       question: "How familiar are the users of the AI System with Machine Learning and AI?",
-      condition: {
-        
-      },
       answers: [{
         text: "Very familiar",
-        implications: {
-          //TODO
+        filters: {
+          aiLiteracy: "good"
         }
       }, {
         text: "Broad Understanding",
-        implications: {
-          //TODO
+        filters: {
+          aiLiteracy: "mid"
         }
       }, {
         text: "Little to no understanding",
-        implications: {
-          //TODO
+        filters: {
+          aiLiteracy: "bad"
         }
       }, {
         text: "Users are very heterogenous in this regard",
-        implications: {
-          //TODO
+        filters: {
+          aiLiteracy: "diverse"
         }
       }]
     }]
-
-// eslint-disable-next-line no-unused-vars
-const temp = {
-  question: "",
-  condition: {
-    
-  },
-  answers: [{
-    text: "",
-    implications: {
-      
-    }
-  }, {
-    text: "",
-    implications: {
-      
-    }
-  }, {
-    text: "",
-    implications: {
-      
-    }
-  }]
-}
