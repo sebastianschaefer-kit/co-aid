@@ -20,7 +20,7 @@ const routes = [
       {
         path: '',
         name: 'Patterns',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/Patterns.vue'),
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Main.vue'),
       },
     ],
   },

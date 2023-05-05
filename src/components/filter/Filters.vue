@@ -1,13 +1,8 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="d-flex flex-column">
-    <p class="text-h6 text-center text-medium mb-3" style="color: #455A64;">Filters</p>
-    <div
-      v-for="[i, filter] in filters.entries()"
-      class="d-flex flex-column"
-      :key="i"
-    >
-      <p style="color: #455A64;" class="text-h7 text-center">{{ filter.text }}</p>
+    <div v-for="[i, filter] in filters.entries()" class="d-flex flex-column" :key="i">
+      <p style="color: #455a64" class="text-h7 text-center">{{ filter.text }}</p>
       <FilterPicker
         :multiple="filter.multiple"
         :options="filter.options"
@@ -19,7 +14,7 @@
 </template>
 
 <script setup>
-import FilterPicker from './FilterPicker.vue';
+import FilterPicker from "./FilterPicker.vue";
 </script>
 
 <script>
@@ -28,64 +23,97 @@ export default {
   name: "Filters",
   data() {
     return {
-      filters: [{
-        text: "Perspective",
-        id: "perspective",
-        multiple: true,
-        options: [{
-          text: "Data-Science",
-          value: "ds"
-        }, {
-          text: "User Experience (UI/UX)",
-          value: "ux"
-        }],
-      }, {
-        text: "Task Type(s)",
-        id: "taskType",
-        multiple: true,
-        options: [{
-          text: "Estimation/Regression",
-          value: "reg"
-        }, {
-          text: "Classification",
-          value: "class"
-        }, {
-          text: "Detection",
-          value: "det"
-        }],
-      }, {
-        text: "Data Type(s)",
-        id: "dataType",
-        multiple: true,
-        options: [{
-          text: "Structured (tabular)",
-          value: "tab"
-        }, {
-          text: "Image",
-          value: "img"
-        }, {
-          text: "Text",
-          value: "text"
-        }],
-      }, {
-        text: "User AI Literacy",
-        id: "aiLiteracy",
-        multiple: false,
-        options: [{
-          text: "Very good",
-          value: "good"
-        }, {
-          text: "Broad Understanding",
-          value: "mid"
-        }, {
-          text: "Little to no understanding",
-          value: "bad"
-        }, {
-          text: "Very heterogenous",
-          value: "diverse"
-        }],
-      }]
-    }
-  }
-}
+      filters: [
+        {
+          // TODO
+          text: "Perspective",
+          id: "perspective",
+          multiple: true,
+          options: [
+            {
+              text: "Data-Science",
+              value: "ds",
+            },
+            {
+              text: "User Experience (UI/UX)",
+              value: "ux",
+            },
+          ],
+        },
+        {
+          text: "Task Type(s)",
+          id: "taskType",
+          multiple: true,
+          options: [
+            {
+              text: "Estimation/Regression",
+              value: "reg",
+            },
+            {
+              text: "Classification",
+              value: "class",
+            },
+            {
+              text: "Detection",
+              value: "det",
+            },
+          ],
+        },
+        {
+          text: "Data Type(s)",
+          id: "dataType",
+          multiple: true,
+          options: [
+            {
+              text: "Structured (tabular)",
+              value: "tab",
+            },
+            {
+              text: "Image",
+              value: "img",
+            },
+            {
+              text: "Text",
+              value: "text",
+            },
+          ],
+        },
+        {
+          text: "State of your Project",
+          id: "projectState",
+          multiple: false,
+          options: [
+            {
+              text: "Ideation phase",
+              value: "early",
+            },
+            {
+              text: "Concept/Implementation",
+              value: "concept",
+            },
+            {
+              text: "System is operating",
+              value: "running",
+            },
+          ],
+        },
+        {
+          text: "Do you have problems with Over- or Underconfidence in AI?",
+          id: "overReliance",
+          multiple: false,
+          options: [
+            {
+              text: "Overconfidence (Automation Bias)",
+              value: true,
+            },
+            {
+              text: "Underconfidence (Insufficient trust)",
+              value: false,
+            },
+          ],
+        },
+      ],
+    };
+  },
+};
 </script>

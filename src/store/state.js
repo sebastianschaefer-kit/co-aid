@@ -14,17 +14,15 @@ export const useStateStore = defineStore('state', {
       corErrors: undefined,
       adherenceInvestigated: undefined,
     },
+    groups: ["compPot", "confidence", "xai", "humanCentric", "ml"],
     filters: {
       perspective: ["ds", "ux"],
+      overReliance: undefined,
+      projectState: undefined,
       taskType: ["reg", "class", "det"],
       dataType: ["tab", "img", "text"],
-      aiLiteracy: undefined,
+      risk: undefined, //
     },
-    sorters: {
-      comPot: undefined,
-      aiAdherence: undefined,
-      diverseUsers: undefined,
-    }
   }),
   getters: {
     currentIndex() {

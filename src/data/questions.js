@@ -83,12 +83,21 @@ export default [{
       multiple: false,
       answers: [{
         text: "I have a problem/task I want to solve and am developing broad a concept right now",
+        filters: {
+          projectState: "early"
+        }
       }, {
-        text: "I already have a broad concept and am working on a more concrete design or implementation right now",
+        text: "I already have a concept and am working on a design or implementation right now",
+        filters: {
+          projectState: "concept"
+        }
       }, {
         text: "I already have an operating system that I want to improve",
         info: {
           modelTrained: true
+        },
+        filters: {
+          projectState: "running"
         }
       }]
     }, {
@@ -115,14 +124,14 @@ export default [{
       answers: [{
         text: "Yes",
         sort: {
-          aiAdherence: true
+          overReliance: true
         }
       }, {
         text: "I don't know",
       }, {
         text: "No",
         sort: {
-          aiAdherence: false
+          overReliance: false
         }
       }]
     }, {
@@ -202,7 +211,7 @@ export default [{
       answers: [{
         text: "Users overly adhere to AI",
         sort: {
-          aiAdherence: false,
+          overReliance: false,
         },
       }, {
         text: "Both at a similar grade",
@@ -214,7 +223,7 @@ export default [{
       }, {
         text: "Adherence to AI is too low",
         sort: {
-          aiAdherence: true,
+          overReliance: true,
         },
       }]
     }, {
