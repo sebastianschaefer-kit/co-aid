@@ -4,7 +4,7 @@ export default [{
     perspective: ["ux"],
     dataType: ["tab", "img", "text"],
     overReliance: true,
-    projectState: ["concept", "running"],
+    projectState: ["early", "concept", "running"],
     title: "Delay AI Assistance",
     description: "Humans tend to anchor to the first things they see (Anchor Effect). When humans see a possible and plausible solution in the same moment they see a task it is very hard for them to make unbiased decisions. This can be even further increased, when the are provided with explanations as they can be persuasive or intimidating, expecially when humans can't comprehend them.\nIn situations, where it is critical for humans to critically assess the AI decision, it is detrimental to provide them with AI recommendations right away.",
     tipps: [
@@ -58,7 +58,7 @@ export default [{
     id: "notifyOutliers",
     group: "ml",
     perspective: ["ux", "ds"],
-    projectState: ["concept", "running"],
+    projectState: ["early", "concept", "running"],
     overReliance: true,
     title: "Notify outlier data points",
     description: "ML Models are usually trained and validated on a particular data set. Because of this, AI often struggles with data instances lying outside of the of the distribution found in the Training Data. Data in real-life scenarios are oftentimes different than Training Data.\nSo a simple way of giving users information on whether AI might have problems working with a particular instance, is to notify them, if the instance is an outlier.",
@@ -121,11 +121,15 @@ export default [{
   }, {
     id: "complementarityPotential",
     group: "compPot",
-    perspective: ["ds"],
+    perspective: ["ds", "ux"],
     taskType: ["reg", "class", "det"],
     dataType: ["tab", "img", "text"],
     title: "Ensure potential for Complementarity",
     description: "Complementarity Potential is the most central prerequisite to Complementary Team Performance. If the AI's and humans' errors are largely aligned, there is very limited potential for complementarity in a collaborative environment.\nOverly prioritzing Perfromance when selecting and training ML models does not always lead to the best results in Team Performance.",
+    images: [{
+      fileName: "complementarityPotential.png",
+      width: "90%"
+    }],
     tipps: [
       "Investigate Error Patterns of human users",
       "Adapt training data to focus more on instances, where humans make mistakes"
@@ -150,6 +154,12 @@ export default [{
     overReliance: true,
     title: "Provide XAI assistance without actual AI recommendation",
     description: "In tasks of high risk domains, such as medicine, law or human resources, as well as knowledge intensive domains, like finance, full automation can have lots of disadvantages. Providing only explanations, while withholding the actual AI prediction, can help users by giving a general direction without biasing the human to much.",
+    images: [{
+      fileName: "ida.png",
+      description: "Concept of Intelligent Decision Assistance on a Credit Approval task",
+      source: "schemmer2023intelligent",
+      width: "40%"
+    }],
     tipps: [
       "Provide color coding for features regarding their importance\nDifferent colors for direction of feature influence; Intensify colors for higher importance",
       "Provide local example-based explanations, showing similar Training Data instances",
@@ -222,6 +232,12 @@ export default [{
     dataType: ["tab", "img", "text"],
     title: "Present Confidence Intervals",
     description: "Confidence intervals can provide insights into the uncertainty of an AI prediction, in the case of a continous estimation task.",
+    images: [{
+      fileName: "confidenceInterval.png",
+      description: "House Price Prediction Task",
+      source: "hemmer2022effect",
+      width: "60%"
+    }],
     tipps: [
       "Visual representations in the form of a numeric beam with confidence and prediction values are easier to interpret than plain numeric values"
     ],
@@ -275,19 +291,22 @@ export default [{
     tradeOffs: [
       "Team Performance might be lower than the performance of the best AI model working alone. In this case you may consider fully automating this task.",
     ],
-    images: [],
-    components: [
-      // TODO
-      {
-        name: "fiText",
-        gitRef: "github.com/sebastianschafer-kit/co-aid/...",
-        mode: "top-2",
-        data: {
-          features: ["h1", "h2", "h3"],
-          columns: ["nominal value", 250, true],
-        },
-      },
-    ],
+    images: [{
+      fileName: "featureImportanceTabular.png",
+      description: "Recidivism Prediction Task",
+      source: "liu2021understanding",
+      width: "25%"
+    }, {
+      fileName: "featureImportanceText.png",
+      description: "Deceptive Review Detection",
+      source: "lai2020chicago",
+      width: "40%"
+    }, {
+      fileName: "featureImportanceImage.png",
+      description: "Activity Classification with Top-Down Neural Attention",
+      source: "zhang2018top",
+      width: "25%"
+    }],
     technologies: [
       // TODO
     ],
@@ -299,7 +318,8 @@ export default [{
       { id: "lai2020chicago", proposal: false },
       { id: "liu2021understanding", proposal: false },
       { id: "biran2017human", proposal: false },
-      { id: "zhang2020effect", proposal: true }
+      { id: "kiani2020impact", proposal: false },
+      { id: "zhang2020effect", proposal: true },
     ]
   }, {
     id: "classGlobalExamples",
@@ -317,9 +337,11 @@ export default [{
     tradeOffs: [
       "The number of pictures has to be appropriate to carry enough information to be generalizable, but not overload the user"
     ],
-    images: [
-      // TODO
-    ],
+    images: [{
+      fileName: "classGlobalExamples.png",
+      description: "Dog classification task",
+      source: "fuegener2021will"
+    }],
     references: [
       { id: "fuegener2021will", proposal: false }
     ],
@@ -343,9 +365,12 @@ export default [{
       "classGlobalExamples",
       "exampleSpatialLayout"
     ],
-    images: [
-      // TODO Bucinca proxy tasks
-    ],
+    images: [{
+      fileName: "example.png",
+      description: "Example-based Explanations on Nutrition Prediction",
+      source: "buccinca2020proxy",
+      width: "50%"
+    }],
     references: [
       { id: "gonzalez2020human", proposal: false },
       { id: "buccinca2020proxy", proposal: false }
@@ -357,16 +382,24 @@ export default [{
     title: "Local example-based explanations with spatial layouts",
     description: "Spatial layouts are able to visualize the similarities of different instances to the input instance. The closer an image is to the input image the similar they are.",
     tipps: [
-      "Use grid layout, if the representation is easy to understand\nColumns represent classes.",
-      "Use tree layout, if the representation is difficult to read\nRoot node is the input instance; Leaves are instances with different predicted classes than the input",
+      "Use Grid Layout, if the representation is easy to understand\nColumns represent classes.",
+      "Use Tree Layout, if the representation is difficult to read\nRoot node is the input instance; Leaves are instances with different predicted classes than the input",
       "Escape routes algorithm to determine similarity/closesness (see Yang et al. 2020)"
     ],
     tradeOffs: [
       "The number of pictures has to be appropriate to carry enough information, but not overload the user"
     ],
-    images: [
-      // TODO
-    ],
+    images: [{
+      fileName: "exampleSpatialLayout1.png",
+      description: "Leaf Classification - Grid Layout",
+      source: "yang2020visual",
+      width: "35%"
+    }, {
+      fileName: "exampleSpatialLayout2.png",
+      description: "Leaf Classification - Tree Layout",
+      source: "yang2020visual",
+      width: "50%"
+    }],
     related: [
       "example"
     ],
@@ -380,8 +413,11 @@ export default [{
     taskType: ["reg", "class", "det"],
     dataType: ["tab", "img", "text"],
     projectState: ["concept", "running"],
-    title: "Explanations with appropriate cognitive effort",
+    title: "Use explanations with appropriate cognitive effort",
     description: "Humans are inherently trying to reduce the cognitive effort expended. Because of that, too demanding explanations might get ignored.",
+    tipps: [
+      "Talk to your potential users and make early tests with them regarding their usage and understanding of XAI"
+    ],
     tradeOffs: [
       "Too cognitively demanding explanations are likely to be ignored",
       "Too simple explanations might not be able to contain meaningful information"
@@ -426,9 +462,12 @@ export default [{
     tipps: [
       "Penalize new errors when retraining models"
     ],
-    images: [
-      // TODO 
-    ],
+    images: [{
+      fileName: "compatibleUpdates.png",
+      description: "Depiction of (in-)compatible model updates",
+      source: "bansal2019updates",
+      width: "45%"
+    }],
     tradeOffs: [
       "Compatible updates provide better Team Performance earlier",
       "Incompatible but high performance updates have potential to reach better Team Performance in the long term"

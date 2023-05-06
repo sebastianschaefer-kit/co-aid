@@ -4,8 +4,8 @@
       <v-btn
         v-bind="props"
         icon="mdi-information"
-        width="15px"
-        height="15px"
+        width="16px"
+        height="16px"
         variant="plain"
         size="x-small"
       ></v-btn>

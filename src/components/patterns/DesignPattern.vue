@@ -12,6 +12,7 @@
       <template v-slot:text>
         <div class="d-flex flex-column" style="gap: 12px">
           <div class="text-body-2 text-justify">{{ pattern.description }}</div>
+          <DesignPatternImages :images="pattern.images"></DesignPatternImages>
           <div v-if="pattern.tipps">
             <div class="text-body-1">Tipps</div>
             <v-list density="compact" bg-color="green-lighten-5">
@@ -85,6 +86,7 @@
 import { mapActions } from "pinia";
 import DesignPatternHeader from "./DesignPatternHeader.vue";
 import DesignPatternPreview from "./DesignPatternPreview.vue";
+import DesignPatternImages from "./DesignPatternImages.vue";
 </script>
 
 <script>
@@ -101,6 +103,15 @@ export default {
   computed: {
     maternity() {
       return this.getMaternity(this.pattern);
+    },
+  },
+  watch: {
+    pattern: {
+      handler(changed) {
+        this.expanded = changed.expanded;
+        this.$emit("scrollToPattern", changed.id);
+      },
+      deep: true,
     },
   },
   methods: {

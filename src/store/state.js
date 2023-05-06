@@ -21,7 +21,6 @@ export const useStateStore = defineStore('state', {
       projectState: undefined,
       taskType: ["reg", "class", "det"],
       dataType: ["tab", "img", "text"],
-      risk: undefined, //
     },
   }),
   getters: {
@@ -30,7 +29,7 @@ export const useStateStore = defineStore('state', {
     },
     interactions() {
       const list = [];
-      for (let interaction of this.interactionRefs) {
+      for (let interaction of this.interactionRefs) { 
         list.push({
           ...this.questions[interaction.questionIndex],
           ...interaction
@@ -40,6 +39,25 @@ export const useStateStore = defineStore('state', {
     },
   },
   actions: {
+    restartQuestions() {
+      this.interactionRefs = [{ questionIndex: 0, answer: null, actionExecuted: false }];
+      this.info = {
+        role: undefined,
+        modelTrained: undefined,
+        aiGreaterHuman: undefined,
+        corErrors: undefined,
+        adherenceInvestigated: undefined,
+      };
+      this.groups = ["compPot", "confidence", "xai", "humanCentric", "ml"];
+      this.filters = {
+        perspective: ["ds", "ux"],
+        overReliance: undefined,
+        projectState: undefined,
+        taskType: ["reg", "class", "det"],
+        dataType: ["tab", "img", "text"],
+        risk: undefined, //
+      };
+    },
     getQuestion(index = this.currentIndex) {
       if (index < this.questions.length) {
         return this.questions[index];

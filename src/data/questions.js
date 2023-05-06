@@ -1,15 +1,7 @@
 export default [{
-      question: "Hi there!\nI am going to be your assistant for the time. To help me understand what I can provide for you, I have to ask you some questions about your project. Is that in your intrest or do you want to eplore the Design Patterns for yourself?",
-      answers: [{
+      question: "Hi there!\nTo help me understand what is fitting for your project, I have to ask you some questions. If that is in your interest click 'Go on', otherwise switch to the filters tab, where you can freely explore Design Patterns.",
+      actions: [{
         text: "Go on! Guide me.",
-        info: {
-          view: "guidance"
-        }
-      }, {
-        text: "I want to explore for myself!",
-        info: {
-          view: "explore"
-        }
       }]
     }, {
       question: "What is your role in this project?",
@@ -41,12 +33,12 @@ export default [{
           }
         }]
     }, {
-      question: "I think it is very important to broadly understand the human-centric perspective as well.\nDo you want me to show only Design Patterns for the data-centric perspetive?",
+      question: "Do you want me to see only Design Patterns for the Machine Learning/Data Science perspetive?",
       condition: {
         role: "datascienctist"
       },
       answers: [{
-        text: "Yes, only data-science perspective!",
+        text: "Yes, only Machine Learning/Data Science perspective!",
         filters: {
           perspective: ["ds"]
         }
@@ -60,12 +52,12 @@ export default [{
         }
       }]
     }, {
-      question: "I think it is very important to broadly understand the data-centric perspective as well.\nDo you want me to show only Design Patterns for the human-centric perspetive?",
+      question: "Do you want to see only Design Patterns regarding the design of the frontend and collaboration mechanisms?",
       condition: {
         role: "frontend"
       },
       answers: [{
-        text: "Yes, only user-centric perspective!",
+        text: "Yes, only frontend perspective!",
         filters: {
           perspective: ["ux"]
         },
@@ -117,24 +109,6 @@ export default [{
         }
       }]
     }, {
-      question: "Does your model perform better than the human?",
-      condition: {
-        modelTrained: true
-      },
-      answers: [{
-        text: "Yes",
-        sort: {
-          overReliance: true
-        }
-      }, {
-        text: "I don't know",
-      }, {
-        text: "No",
-        sort: {
-          overReliance: false
-        }
-      }]
-    }, {
       question: "Do the errors of AI and humans tend to happen at the same or similar instances?",
       condition: {
         modelTrained: true
@@ -144,40 +118,34 @@ export default [{
         info: {
           corErrors: true,
         },
-        sort: {
-          compPot: true,
-        },
       }, {
         text: "I don't know",
       }, {
-        text: "Yes",
+        text: "No",
         info: {
           corErrors: false,
         },
-        sort: {
-          compPot: false,
-        },
       }]
     }, {
-      question: "That is a good start, because having Complementarity Potential is so critical. If you want to further increase this potential consider these Design Patterns.",
+      question: "That is a good start, because having Complementarity Potential is so critical. If you want to further increase this potential consider the Design Patterns top.",
       condition: {
         corErrors: true,
         modelTrained: true
       },
     }, {
-      question: "It might be helpful to investigate this. Because having Complementarity Potential is so critical, here are some Design Patterns to potentially increase it.",
+      question: "It might be helpful to investigate this. Because having Complementarity Potential is so critical, have a look at the Design Patterns on top.",
       condition: {
         corErrors: undefined,
         modelTrained: true
       },
     }, {
-      question: "That is not an optimal starting point for Complementarity. Because having Complementarity Potential is so critical, here are some Design Patterns to potentially increase it.",
+      question: "That is not an optimal starting point for Complementarity. Because having Complementarity Potential is so critical, have a look at the Design Patterns on top.",
       condition: {
         corErrors: false,
         modelTrained: true
       },
     }, {
-      question: "To reach Complementary Team Perfrormance it is crucial that humans and AI can make use of their respective strengths while allowing the other one to make up for their weaknesses. So it is importannt to always keep this in mind. Here are some Design Patterns that can help to increase this Complementarity Potential.",
+      question: "To reach Complementary Team Perfrormance it is crucial that humans and AI can make use of their respective strengths while allowing the other one to make up for their weaknesses. So it is importannt to always keep this in mind. Have a look at these Design Patterns on the topic of Complementarity Potential.",
       condition: {
         modelTrained: false
       },
@@ -185,7 +153,8 @@ export default [{
       question: "Take all the time you need.\nIf you want to move on for now, you can always revisit these Design Patterns.",
       actions: [{
         text: "Go on"
-      }]
+      }],
+      focus: "complementarityPotential",
     }, {
       question: "Complementarity can be reached by targetting appropriate trust in the AI.\nHave you investigated the adherence of humans to AI advice?",
       condition: {
@@ -210,19 +179,19 @@ export default [{
       },
       answers: [{
         text: "Users overly adhere to AI",
-        sort: {
+        filters: {
           overReliance: false,
         },
       }, {
         text: "Both at a similar grade",
       }, {
         text: "Depends on the user",
-        sort: {
+        filters: {
           diverseUsers: true
         }
       }, {
         text: "Adherence to AI is too low",
-        sort: {
+        filters: {
           overReliance: true,
         },
       }]
@@ -232,8 +201,6 @@ export default [{
         modelTrained: true,
         adherenceInvestigated: false        
       },
-    }, {
-      question: "Now I want to ask you some more questions about the task you want to solve.",
     }, {
       question: "How can the task(s) be classified?\nYou can select multiple types as well, if your task includes multiple different subtasks.",
       multiple: true,
@@ -273,26 +240,7 @@ export default [{
         }
       }]
     }, {
-      question: "How familiar are the users of the AI System with Machine Learning and AI?",
-      answers: [{
-        text: "Very familiar",
-        filters: {
-          aiLiteracy: "good"
-        }
-      }, {
-        text: "Broad Understanding",
-        filters: {
-          aiLiteracy: "mid"
-        }
-      }, {
-        text: "Little to no understanding",
-        filters: {
-          aiLiteracy: "bad"
-        }
-      }, {
-        text: "Users are very heterogenous in this regard",
-        filters: {
-          aiLiteracy: "diverse"
-        }
-      }]
+      questions: "Thank you for answering the questions. The Design Patterns you can see, are selected based on the similarity of the studies, where they found positive impact on CTP."
+    }, {
+      questions: "You can now switch to the filters tab to further explore the Design Patterns or restart the guidance questions if you want by clicking the button on the bottom left."
     }]

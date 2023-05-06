@@ -492,4 +492,21 @@ export default [
     noOfLabels: undefined,
     aiLiteracy: undefined,
     domainLiteracy: undefined
+  },
+  {
+    title: "Top-Down Neural Attention by Excitation Backprop",
+    year: 2018,
+    authors: "Jianming Zhang, Sarah Adel Bargal, Zhe Lin, Jonathan Brandt, Xiaohui Shen, Stan Sclaroff",
+    aiModel: "",
+    aiAssistanceElement: [],
+    actualTask: [],
+    id: "zhang2018top",
+    dataType: undefined,
+    requiredExpertise: undefined,
+    risk: undefined,
+    subjective: undefined,
+    taskType: undefined,
+    noOfLabels: undefined,
+    aiLiteracy: undefined,
+    domainLiteracy: undefined
   }]

@@ -21,12 +21,12 @@
 }
 @media (min-width: 1280px) {
   .v-toolbar__content, .v-container  {
-    max-width: 1200px !important;
+    max-width: unset !important;
   }
 }
 @media (min-width: 1920px) {
   .v-toolbar__content, .v-container  {
-    max-width: 1400px !important;
+    max-width: 1600px !important;
   }
 }
 @media (min-width: 2560px) {

@@ -68,7 +68,7 @@ export const usePatternsStore = defineStore('patterns', {
             }
           }
 
-          if (value === undefined || value.length === 0) return true;
+          if (value === undefined || value.length === 0) continue;
           
           if (Array.isArray(filterValue) && filterValue.length > 0 && value.length > 0) {
             if (!this.any(filterValue, value)) {
@@ -101,6 +101,9 @@ export const usePatternsStore = defineStore('patterns', {
     },
     getPattern(id) {
       return this.patterns.find((el) => el.id === id)
+    },
+    openPattern(id) {
+      this.getPattern(id).expanded = true;
     },
     getReference(id) {
       return this.references.find((el) => el.id === id)
