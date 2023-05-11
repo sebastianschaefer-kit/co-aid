@@ -7,7 +7,7 @@
       :style="{ width: img.width }"
     >
       <v-img
-        :src="'src/assets/patterns/' + img.fileName"
+        :src="'patterns/' + img.fileName"
         class="mx-5"
         width="100%"
         style="align-self: center"
