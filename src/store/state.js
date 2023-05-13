@@ -55,8 +55,17 @@ export const useStateStore = defineStore('state', {
         projectState: undefined,
         taskType: ["reg", "class", "det"],
         dataType: ["tab", "img", "text"],
-        risk: undefined, //
       };
+    },
+    resetFilters() {
+      this.filters = {
+        perspective: ["ds", "ux"],
+        overReliance: undefined,
+        projectState: undefined,
+        taskType: ["reg", "class", "det"],
+        dataType: ["tab", "img", "text"],
+      };
+
     },
     getQuestion(index = this.currentIndex) {
       if (index < this.questions.length) {

@@ -2,7 +2,16 @@
 <template>
   <div class="d-flex flex-column">
     <div v-for="[i, filter] in filters.entries()" class="d-flex flex-column" :key="i">
-      <p style="color: #455a64" class="text-h7 text-center">{{ filter.text }}</p>
+      <div class="d-flex flex-row justify-center align-center" style="width: 100%">
+        <font class="text-h7 text-center" style="line-height: normal" color="#455A64">{{
+          filter.text
+        }}</font>
+        <InfoButton
+          v-if="filter.infoText"
+          :text="filter.infoText"
+          cls="ml-1"
+        ></InfoButton>
+      </div>
       <FilterPicker
         :multiple="filter.multiple"
         :options="filter.options"
@@ -15,6 +24,7 @@
 
 <script setup>
 import FilterPicker from "./FilterPicker.vue";
+import InfoButton from "../base/InfoButton.vue";
 </script>
 
 <script>
@@ -25,9 +35,9 @@ export default {
     return {
       filters: [
         {
-          // TODO
           text: "Perspective",
           id: "perspective",
+          infoText: "Use this filter to see Design Patterns from one perspective only",
           multiple: true,
           options: [
             {
@@ -43,6 +53,7 @@ export default {
         {
           text: "Task Type(s)",
           id: "taskType",
+          infoText: "You can select multiple Task Types",
           multiple: true,
           options: [
             {
@@ -56,12 +67,15 @@ export default {
             {
               text: "Detection",
               value: "det",
+              infoText:
+                "Detection refers to feature detection in unstructured data. It is used in text or image annotation as first step to determine, which parts of text or image are classified.",
             },
           ],
         },
         {
           text: "Data Type(s)",
           id: "dataType",
+          infoText: "You can select multiple Task Types",
           multiple: true,
           options: [
             {
@@ -81,6 +95,8 @@ export default {
         {
           text: "State of your Project",
           id: "projectState",
+          infoText:
+            "Use this filter to get Design Patterns specificly for this project phase.\nUse with care as this classification might be subjective and not perfectly fit your situation.",
           multiple: false,
           options: [
             {
@@ -98,8 +114,10 @@ export default {
           ],
         },
         {
-          text: "Do you have problems with Over- or Underconfidence in AI?",
+          text: "Do users tend to be over- or underconfident in AI?",
           id: "overReliance",
+          infoText:
+            "There are Design Patterns that increase or decrease adherence to AI. Use this filter if you have a specific problem in this regard.",
           multiple: false,
           options: [
             {

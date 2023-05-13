@@ -1,7 +1,8 @@
 export default [{
-      question: "Hi there!\nTo help me understand what is fitting for your project, I have to ask you some questions. If that is in your interest click 'Go on', otherwise switch to the filters tab, where you can freely explore Design Patterns.",
+      question: "Hi there!\nTo help me understand which Design Patterns are fitting for your project, I have to ask you some questions. If that is in your interest click 'Go on', otherwise switch to the filters tab, where you can freely explore Design Patterns.",
       actions: [{
         text: "Go on! Guide me.",
+        reset: true,
       }]
     }, {
       question: "What is your role in this project?",
@@ -33,7 +34,7 @@ export default [{
           }
         }]
     }, {
-      question: "Do you want me to see only Design Patterns for the Machine Learning/Data Science perspetive?",
+      question: "Do you want see only Design Patterns for the Machine Learning/Data Science perspetive?",
       condition: {
         role: "datascienctist"
       },
@@ -127,30 +128,30 @@ export default [{
         },
       }]
     }, {
-      question: "That is a good start, because having Complementarity Potential is so critical. If you want to further increase this potential consider the Design Patterns top.",
+      question: "That is a good start, because having Complementarity Potential is so critical. If you want to further increase this potential, consider the Design Pattern currently showing.",
       condition: {
         corErrors: true,
         modelTrained: true
       },
     }, {
-      question: "It might be helpful to investigate this. Because having Complementarity Potential is so critical, have a look at the Design Patterns on top.",
+      question: "It might be helpful to investigate this. Because having Complementarity Potential is so critical, have a look at the Design Pattern currently showing.",
       condition: {
         corErrors: undefined,
         modelTrained: true
       },
     }, {
-      question: "That is not an optimal starting point for Complementarity. Because having Complementarity Potential is so critical, have a look at the Design Patterns on top.",
+      question: "That is not an optimal starting point for Complementarity. Because having Complementarity Potential is so critical, have a look at the Design Pattern currently showing.",
       condition: {
         corErrors: false,
         modelTrained: true
       },
     }, {
-      question: "To reach Complementary Team Perfrormance it is crucial that humans and AI can make use of their respective strengths while allowing the other one to make up for their weaknesses. So it is importannt to always keep this in mind. Have a look at these Design Patterns on the topic of Complementarity Potential.",
+      question: "To reach Complementary Team Perfrormance it is crucial that humans and AI can make use of their respective strengths while allowing the other one to make up for their weaknesses. So it is importannt to always keep this in mind. Have a look at the Design Pattern currently showing.",
       condition: {
         modelTrained: false
       },
     }, {
-      question: "Take all the time you need.\nIf you want to move on for now, you can always revisit these Design Patterns.",
+      question: "Take all the time you need.\nIf you want to move on for now, you can always revisit these Design Patterns later.",
       actions: [{
         text: "Go on"
       }],
@@ -185,6 +186,8 @@ export default [{
       }, {
         text: "Both at a similar grade",
       }, {
+        text: "I don't know",
+      }, {
         text: "Depends on the user",
         filters: {
           diverseUsers: true
@@ -196,7 +199,7 @@ export default [{
         },
       }]
     }, {
-      question: "This can be very insightful to investigate. Usually it is a mixture of both and can also be very dependent on the user performing the task.\nAdvice: Try to view incorrect acceptance of AI advice seperately from incorrect self trust.",
+      question: "This can be very insightful to investigate. Often it is a mixture of both and can also be very dependent on the user performing the task.\nAdvice: Try to view incorrect acceptance of AI advice seperately from incorrect self trust.",
       condition: {
         modelTrained: true,
         adherenceInvestigated: false        
@@ -240,7 +243,7 @@ export default [{
         }
       }]
     }, {
-      questions: "Thank you for answering the questions. The Design Patterns you can see, are selected based on the similarity of the studies, where they found positive impact on CTP."
+      question: "Thank you for answering the questions. The Design Patterns you can see, are selected based on the similarity of the studies, where they found positive impact on CTP."
     }, {
-      questions: "You can now switch to the filters tab to further explore the Design Patterns or restart the guidance questions if you want by clicking the button on the bottom left."
+      question: "You can now switch to the filters tab to further explore the Design Patterns and adapt the preselected filters or restart the guidance questions, if you want, by clicking the button on the bottom left."
     }]

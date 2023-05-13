@@ -4,10 +4,10 @@
       <v-btn
         v-bind="props"
         icon="mdi-information"
-        width="16px"
-        height="16px"
         variant="plain"
         size="x-small"
+        density="comfortable"
+        :class="cls"
       ></v-btn>
     </template>
   </v-tooltip>
@@ -16,6 +16,6 @@
 <script>
 export default {
   name: "InfoButton",
-  props: ["text"],
+  props: ["text", "cls"],
 };
 </script>

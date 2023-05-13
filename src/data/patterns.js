@@ -197,7 +197,7 @@ export default [{
     references: [
       { id: "fuegener2021will", proposal: false },
       { id: "gonzalez2020human", proposal: false },
-      { id: "zhang2020effect", proposal: true }
+      { id: "zhang2020effect", proposal: false }
     ],
   }, {
     id: "multiClassProbabilities",
@@ -319,7 +319,6 @@ export default [{
       { id: "liu2021understanding", proposal: false },
       { id: "biran2017human", proposal: false },
       { id: "kiani2020impact", proposal: false },
-      { id: "zhang2020effect", proposal: true },
     ]
   }, {
     id: "classGlobalExamples",

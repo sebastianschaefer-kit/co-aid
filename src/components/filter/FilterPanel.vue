@@ -1,17 +1,15 @@
 <template>
-  <div class="f-dlex flex-column" style="gap: 16px;">
-    <!-- <Sorters></Sorters> -->
+  <div class="f-dlex flex-column" style="gap: 16px">
     <Filters></Filters>
   </div>
 </template>
 
 <script setup>
-import Filters from './Filters.vue';
-// import Sorters from './Sorters.vue';
+import Filters from "./Filters.vue";
 </script>
 
 <script>
 export default {
-    name: "FilterPanel",
-}
+  name: "FilterPanel",
+};
 </script>
