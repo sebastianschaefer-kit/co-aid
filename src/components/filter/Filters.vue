@@ -37,11 +37,11 @@ export default {
         {
           text: "Perspective",
           id: "perspective",
-          infoText: "Use this filter to see Design Patterns from one perspective only",
+          infoText: "Use this filter to see design patterns from one perspective only",
           multiple: true,
           options: [
             {
-              text: "Data-Science",
+              text: "Data Science",
               value: "ds",
             },
             {
@@ -53,7 +53,7 @@ export default {
         {
           text: "Task Type(s)",
           id: "taskType",
-          infoText: "You can select multiple Task Types",
+          infoText: "You can select multiple task types",
           multiple: true,
           options: [
             {
@@ -75,7 +75,7 @@ export default {
         {
           text: "Data Type(s)",
           id: "dataType",
-          infoText: "You can select multiple Task Types",
+          infoText: "You can select multiple data types",
           multiple: true,
           options: [
             {
@@ -96,7 +96,7 @@ export default {
           text: "State of your Project",
           id: "projectState",
           infoText:
-            "Use this filter to get Design Patterns specificly for this project phase.\nUse with care as this classification might be subjective and not perfectly fit your situation.",
+            "Use this filter to get design patterns specificly for this project phase.\nUse with care as this classification might be subjective and not perfectly fit your situation.",
           multiple: false,
           options: [
             {
@@ -117,7 +117,7 @@ export default {
           text: "Do users tend to be over- or underconfident in AI?",
           id: "overReliance",
           infoText:
-            "There are Design Patterns that increase or decrease adherence to AI. Use this filter if you have a specific problem in this regard.",
+            "There are design patterns that increase or decrease adherence to AI. Use this filter if you have a specific problem in this regard.",
           multiple: false,
           options: [
             {

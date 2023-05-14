@@ -14,16 +14,16 @@ export const usePatternsStore = defineStore('patterns', {
       text: "Complementarity Potential"
     }, {
       id: "confidence",
-      text: "Confidence/Uncertainty measures"
+      text: "Confidence & Uncertainty Measures"
     }, {
       id: "xai",
       text: "eXplainable AI (XAI)"
     }, {
       id: "humanCentric",
-      text: "Human-centric approaches"
+      text: "Human Centric Approaches"
     }, {
       id: "ml",
-      text: "Machine Learning approaches"
+      text: "Machine Learning Approaches"
     }]
   }),
   getters: {
@@ -97,7 +97,7 @@ export const usePatternsStore = defineStore('patterns', {
       return false;
     },
     sort(el1, el2) {
-      return this.getMaternity(el2).value - this.getMaternity(el1).value;
+      return this.getMaturity(el2).value - this.getMaturity(el1).value;
     },
     getPattern(id) {
       return this.patterns.find((el) => el.id === id)
@@ -108,7 +108,7 @@ export const usePatternsStore = defineStore('patterns', {
     getReference(id) {
       return this.references.find((el) => el.id === id)
     },
-    getMaternity(pattern) {
+    getMaturity(pattern) {
       let noOfRefs = pattern.references
         ? pattern.references.filter((el) => el.proposal === false).length
         : 0;

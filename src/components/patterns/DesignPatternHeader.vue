@@ -9,12 +9,12 @@
           class="text-overline"
           style="opacity: 50%; line-height: normal"
           color="#455A64"
-          >Maternity</font
+          >Maturity</font
         >
-        <InfoButton :text="maternityInfoText"></InfoButton>
+        <InfoButton :text="maturityInfoText"></InfoButton>
       </div>
-      <font class="text-button" style="line-height: normal" :color="maternity.color">{{
-        maternity.grade
+      <font class="text-button" style="line-height: normal" :color="maturity.color">{{
+        maturity.grade
       }}</font>
     </div>
     <v-divider color="primary" class="border-opacity-50" vertical></v-divider>
@@ -29,11 +29,11 @@ import InfoButton from "../base/InfoButton.vue";
 <script>
 export default {
   name: "DesignPatternHeader",
-  props: ["title", "maternity", "cls"],
+  props: ["title", "maturity", "cls"],
   data() {
     return {
-      maternityInfoText:
-        "Maternity grade is computed based on the number of scientific papers reporting CTP or positive effects on team performance of given pattern.\nNegative results are not considered in maternity grades.",
+      maturityInfoText:
+        "Maturity grade is computed based on the number of scientific papers reporting CTP or positive effects on team performance of given pattern.\nNegative results are not considered in maturity grades.",
     };
   },
 };

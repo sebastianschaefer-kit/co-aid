@@ -5,19 +5,19 @@
       <template v-slot:title>
         <DesignPatternHeader
           :title="pattern.title"
-          :maternity="maternity"
+          :maturity="maturity"
           cls="pr-6"
         ></DesignPatternHeader>
       </template>
       <template v-slot:text>
         <div class="d-flex flex-column" style="gap: 12px">
-          <div class="text-body-2 text-justify">{{ pattern.description }}</div>
+          <div class="text-body-1 text-justify">{{ pattern.description }}</div>
           <DesignPatternImages :images="pattern.images"></DesignPatternImages>
-          <div v-if="pattern.tipps">
-            <div class="text-body-1">Tipps</div>
+          <div v-if="pattern.tips">
+            <div class="text-body-1">Tips</div>
             <v-list density="compact" bg-color="green-lighten-5">
-              <v-list-item v-for="tipp in pattern.tipps" class="text-body-2 text-justify">
-                {{ tipp }}
+              <v-list-item v-for="tip in pattern.tips" class="text-body-1 text-justify">
+                {{ tip }}
                 <template v-slot:prepend>
                   <v-icon
                     color="primary"
@@ -33,7 +33,7 @@
             <v-list density="compact" bg-color="green-lighten-5">
               <v-list-item
                 v-for="tradeOff in pattern.tradeOffs"
-                class="text-body-2 text-justify"
+                class="text-body-1 text-justify"
               >
                 {{ tradeOff }}
                 <template v-slot:prepend>
@@ -69,7 +69,6 @@
               >
                 <div class="font-weight-medium">{{ getReferenceTitle(ref.id) }}</div>
                 <div>{{ getReferenceAuthorYear(ref.id) }}</div>
-                <a>www.linktothepaper.com</a>
                 <template v-slot:prepend>
                   <v-icon class="mr-4" icon="mdi-book-open"></v-icon>
                 </template>
@@ -101,8 +100,8 @@ export default {
     };
   },
   computed: {
-    maternity() {
-      return this.getMaternity(this.pattern);
+    maturity() {
+      return this.getMaturity(this.pattern);
     },
   },
   watch: {
@@ -115,7 +114,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(usePatternsStore, ["getPattern", "getReference", "getMaternity"]),
+    ...mapActions(usePatternsStore, ["getPattern", "getReference", "getMaturity"]),
     getReferenceAuthorYear(id) {
       const ref = this.getReference(id);
       return ref.authors + " (" + ref.year + ")";
