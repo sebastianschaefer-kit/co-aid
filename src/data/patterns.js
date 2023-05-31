@@ -46,7 +46,8 @@ export default [{
     ],
     related: [
       "delayAssistance",
-      "appropriateEffort"
+      "appropriateEffort",
+      "adaptiveAI"
     ],
     references: [
       { id: "poursabzi2018manipulating", proposal: false },
@@ -74,8 +75,8 @@ export default [{
       "adaptiveAI"
     ],
     references: [
-      { id: "poursabzi2018manipulating", proposal: false },
-      { id: "liu2021understanding", proposal: false }
+      { id: "poursabzi2018manipulating", proposal: true },
+      { id: "liu2021understanding", proposal: true }
     ],
   }, {
     id: "training",
@@ -258,7 +259,7 @@ export default [{
     description: "Different users, especially in diverse user groups, have different preferences and capabilities and interact differently with an AI System. Adaptive and personalized AI-assistance is one way to live up to this problem.",
     tips: [
       "Adapt based on user preferences or metrics, such as, AI confidence or human and AI agreement",
-      "Train an AI System, estimating when assistance is likely to be benefitial and when not, in regard to one particular user (see Fügnerer et al. 2021)"
+      "Train an AI System, estimating when assistance is likely to be benefitial and when not, in regard to one particular user (see Fügener et al. 2021)"
     ],
     synergies: [
       "notifyOutliers"
@@ -267,7 +268,7 @@ export default [{
       "delayAssistance"
     ],
     references: [
-      { id: "fuegener2021will", proposal: false },
+      { id: "fuegener2021will", proposal: true },
       { id: "bansal2020does", proposal: true },
     ],
   }, {
@@ -279,7 +280,7 @@ export default [{
     title: "Use sensitivity analysis (feature importance)",
     description: "Sensitivity analysis can provide useful insights into the decision of the AI by showing the features that contributed the most to a particular decision (feature importance).\nThe amount and the presentation of the information have to be carefully considered to not overwhelm the user.\nHow to use sensitivity analysis for the best results, depends mostly on the data type(s) of your task and the literacy of the users regarding AI and statistics.",
     tips: [
-      "Provide simple and unserstandable information especially for less AI literate users",
+      "Provide simple and understandable information especially for less AI literate users",
       "Highlighting only the most important features is often enough information",
       "Visual and color coded representations are easier to understand",
       "Point out most important features in natural language",
@@ -335,15 +336,17 @@ export default [{
       source: "fuegener2021will"
     }],
     references: [
-      { id: "fuegener2021will", proposal: false }
+      { id: "fuegener2021will", proposal: true }
     ],
     related: [
-      "example"
+      "example",
+      "infoOverload"
     ]
   }, {
     id: "example",
     group: "xai",
     perspective: ["ux", "ds"],
+    overReliance: true,
     title: "Local example-based explanations",
     description: "Local examples are instances from the training data set that are considered similar to the instance at hand. Local example-based explanations foster inductive decision making by the user.",
     tips: [
@@ -352,7 +355,8 @@ export default [{
       "Show examples, where the AI result matches the current instance"
     ],
     tradeOffs: [
-      "The number of examples has to be appropriate to carry enough information without overloading the user"
+      "The number of examples has to be appropriate to carry enough information without overloading the user",
+      "Example-based explanations are particularly suitable for identifying erroneous AI recommendations"
     ],
     related: [
       "classGlobalExamples",
@@ -372,8 +376,9 @@ export default [{
     id: "exampleSpatialLayout",
     group: "xai",
     perspective: ["ux"],
+    overReliance: true,
     title: "Local example-based explanations with spatial layouts",
-    description: "Spatial layouts can hellp to visualize the similarities of different instances to the input instance. The closer an image is to the input image, the more similar they are.",
+    description: "Spatial layouts can help to visualize the similarities of different instances to the input instance. The closer an image is to the input image, the more similar they are.",
     tips: [
       "Use grid layout, if the representation is easy to understand - columns represent classes",
       "Use tree layout, if the representation is difficult to read - root node is the input instance; leaves are instances with different predicted classes as the input",
