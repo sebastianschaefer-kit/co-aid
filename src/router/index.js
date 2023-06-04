@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
-    path: '/',
+    path: '/co-aid/',
     component: () => import('@/layouts/default/Default.vue'),
     children: [
       {
@@ -14,7 +14,7 @@ const routes = [
     ],
   },
   {
-    path: '/patterns',
+    path: '/co-aid/patterns/',
     component: () => import('@/layouts/default/Default.vue'),
     children: [
       {

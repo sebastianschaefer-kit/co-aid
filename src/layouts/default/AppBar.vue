@@ -10,8 +10,8 @@
           </v-col>
           <v-col cols="8" class="pa-0">
             <v-row style="height: 100%; gap: 32px;" class="justify-start align-center">
-              <NavButton title="What is Co.AID?" path="/"></NavButton>
-              <NavButton title="Design Patterns"  path="/patterns"></NavButton>
+              <NavButton title="What is Co.AID?" path="/co-aid/"></NavButton>
+              <NavButton title="Design Patterns"  path="/co-aid/patterns/"></NavButton>
             </v-row>
           </v-col>
         </v-row>
