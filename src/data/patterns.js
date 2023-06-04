@@ -6,16 +6,16 @@ export default [{
     overReliance: true,
     projectState: ["early", "concept", "running"],
     title: "Delay AI-assistance",
-    description: "Humans tend to anchor to the first thing they see (Anchor Effect). When humans see a plausible solution in the same moment they see a task, it is very hard for them to make an unbiased decision. This can be even further increased, when they are provided with explanations as they can be persuasive or intimidating, expecially when humans can't comprehend them.\nIn situations, where it is important for humans to critically assess the AI decision, it is detrimental to provide them with AI recommendations right away.",
+    description: "Humans tend to anchor on the first thing they see (anchor effect). When humans see a plausible solution at the same moment they see a task, it is very difficult for them to make an unbiased decision. This can be even further increased, when they are provided with explanations, as they can be persuasive or intimidating, especially if humans don't understand them.\nIn situations, where it is important for humans to critically evaluate the AI decision, it's detrimental to provide them with AI recommendations right away.",
     tips: [
-      "Show AI prediction after user gives his/her own prediction",
-      "Delay AI prediction by a certain time",
+      "Show AI prediction after user gives their own prediction",
+      "Delay AI prediction by a certain amount of time",
       "Show AI prediction or explanations on demand",
     ],
     tradeOffs: [
-      "Efficiency decreases since the user usually need more time conducting the task",
-      "Cognitive demand for the user is higher, which can lead to symptoms of fatigue",
-      "When trust in AI is already low, this will probably make it worse"
+      "Decreased efficiency as users typically spend more time performing the task",
+      "Increased cognitive demands on the user, which can lead to fatigue symptoms",
+      "If reliance on AI is already low, this is likely to make it worse"
     ],
     related: [
       "infoOverload",
@@ -35,14 +35,14 @@ export default [{
     dataType: ["tab", "img", "text"],
     projectState: ["concept", "running"],
     title: "Avoid information overload",
-    description: "Humans have limited cognitive capacity and are inherently trying to reduce their cognitive effort. When too much or too complex information is presented to humans, their cognitive capacity has to be used to process and assess given information. They might get intimidated or selectively/completely ignore the information.\nAI-assistance, as well as XAI, should augment and improve the users performance and not make his/her life even harder.",
+    description: "Humans have limited cognitive capacity and naturally seek to reduce their cognitive effort. If too much or too complex information is presented to humans, their cognitive capacity has to be used to process and evaluate the given information. They may become intimidated or selectively/completely ignore the information.\n(X)AI-assistance should enhance and improve the user's performance, not make his/her life more difficult.",
     tips: [
       "Select relevant and helpful information to present to the user",
-      "Preprocess and visualize information",
-      "Adapt to user preferences and capabilities"
+      "Prepare and visualize information",
+      "Adapt to user preferences and skills"
     ],
     tradeOffs: [
-      "Information that might be helpful for one group of users might not be as helpful for others"
+      "Information that is helpful to one group of users may not be as helpful to others"
     ],
     related: [
       "delayAssistance",
@@ -62,14 +62,14 @@ export default [{
     projectState: ["early", "concept", "running"],
     overReliance: true,
     title: "Notify outlier data points",
-    description: "ML Models are usually trained and validated on a particular data set. This is why AI often struggles with data instances lying outside of the distribution found in the training data. Data in real-life scenarios are oftentimes different than training data.\nA simple way of giving the user information on whether AI might have problems working with a particular instance, is to notify them, if the instance is an outlier.",
+    description: "ML models are typically trained and validated on a specific data set. As a result, AI often struggles with data instances that fall outside of the distribution found in the training data. Data in real-world scenarios is often different from the training data.\nAn easy way to give the user information about whether the AI might have problems working with a particular instance is to notify them if the instance is an outlier.",
     tips: [
       "If technically possible, train an ML model that detects outlier data points based on the training data",
       "Provide information about whether an instance is an outlier",
-      "You can also adapt the amount and timing of the information provided based on that"
+      "You can also adjust the amount and timing of the information provided based on this"
     ],
     tradeOffs: [
-      "Well trained models with well rounded training data might actually be able to deliver good results - maybe still even better than humans"
+      "Well-trained models with well-rounded training data can actually perform well on out-of-distribution data, perhaps even better than humans"
     ],
     synergies: [
       "adaptiveAI"
@@ -86,12 +86,12 @@ export default [{
     taskType: ["reg", "class", "det"],
     dataType: ["tab", "img", "text"],
     title: "Train users how to work with (X)AI",
-    description: "AI and especially XAI are topics that can be quite hard to understand for many humans. Interpreting AI recommendations, confidence scores or explanations is not always intuitive.\nProviding detailed tutorials tailered for the users of a system, can ease the introduction to or improve understanding of an AI system.",
+    description: "Concepts of AI and especially XAI can be quite difficult for many people to understand. Interpreting AI recommendations, confidence scores, or explanations is not always intuitive.\nProviding detailed tutorials tailored to the users of a system can help ease the introduction to or understanding of an AI system.",
     tips: [
-      "Explain und guide how to use the system",
-      "Explain what insights, like confidence scores or XAI, really mean and what the user can do with that information",
-      "Show examples, where AI is right and where AI is wrong",
-      "Consider the order and ratio (correct/incorrect) of instances shown",
+      "Explain and guide the use of the system",
+      "Explain what insights such as confidence scores or XAI really mean and what the user can do with this information",
+      "Show examples of where AI is right and where AI is wrong",
+      "Consider the order and ratio (correct/incorrect) of the displayed instances",
     ],
     references: [
       { id: "lai2020chicago", proposal: false },
@@ -105,10 +105,10 @@ export default [{
     dataType: ["tab", "img", "text"],
     overReliance: true,
     title: "Provide additional contextual information",
-    description: "Complementarity potential is the most central prerequisite to complementary team performance. Providing unique human contextual information can enhance the potential for complementarity, as it facilitates contextualization, which is a strength of humans compared to AI.",
+    description: "Complementarity potential is the most essential requirement for complementary team performance. Providing unique human contextual information can increase complementarity potential by facilitating contextualization, which is a strength of humans compared to AI.",
     tips: [
-      "Images and textual data work especially well since they are very contextual",
-      "Data that is not technically available or is computationally expensive can simply be presented to the user only"
+      "Images and textual data work particularly well as they are highly contextual in nature",
+      "Data that is technically unavailable or computationally intensive can simply be presented to the user only"
     ],
     related: [
       "complementarityPotential"
@@ -123,17 +123,17 @@ export default [{
     taskType: ["reg", "class", "det"],
     dataType: ["tab", "img", "text"],
     title: "Ensure potential for complementarity",
-    description: "Complementarity potential is the most central prerequisite to complementary team performance. If the AI's and humans' errors are largely aligned, there is very limited potential for complementarity in a collaborative environment.\nOverly prioritzing performance when selecting and training ML models does not always lead to the best results in team performance.",
+    description: "Complementarity potential is the most important prerequisite for complementary team performance (CTP). If the AI and human errors are largely aligned, there is very limited potential for complementarity in a collaborative environment.\nOver-prioritizing performance when selecting and training ML models does not always lead to the best results in team performance.",
     images: [{
       fileName: "complementarityPotential.png",
       width: "90%"
     }],
     tips: [
-      "Investigate error patterns of users",
-      "Adapt training data to focus more on instances, where humans make mistakes"
+      "Investigate and compare user and AI error patterns",
+      "Customize training data to focus more on instances where humans make mistakes"
     ],
     tradeOffs: [
-      "Team performance might be lower than the performance of the best AI model working alone - you might consider full automation of this task"
+      "Team performance may be lower than the performance of the best AI model working alone - you may want to consider fully automating this task"
     ],
     related: [
       "simpleModels",
@@ -150,8 +150,8 @@ export default [{
     taskType: ["reg", "class"],
     dataType: ["tab", "img", "text"],
     overReliance: true,
-    title: "Provide XAI-assistance without actual AI recommendation",
-    description: "Full automation can have lots of disadvantages, when it comes to tasks in high risk domains, such as medicine, law or human resources, as well as knowledge intensive domains, such as finance. Providing explanations, while withholding the actual AI prediction, can help the user by providing a general direction, while keeping him/her more closely involved into the decision.",
+    title: "Provide XAI-assistance without actual AI recommendation (intelligent decision assistance)",
+    description: "Full automation can have many drawbacks when it comes to tasks in high-risk domains such as medicine, law, or human resources, as well as knowledge-intensive domains such as finance. Providing explanations, while withholding the actual AI prediction, can help the user by providing a general direction while keeping them closely involved in the decision.",
     images: [{
       fileName: "ida.png",
       description: "Concept of intelligent decision assistance on a credit approval task",
@@ -159,13 +159,13 @@ export default [{
       width: "40%"
     }],
     tips: [
-      "Provide color coding for features regarding their importance - different colors for direction of feature influence; Intensify colors for higher importance",
-      "Provide local example-based explanations, showing similar training data instances",
-      "Provide counterfactual explanations, meaning artificially generated examples that would 'flip' the AI prediction by only changing a minimal amount of feature values"
+      "Provide color coding for features based on importance - different colors for direction of feature influence; Intensify colors for higher importance",
+      "Provide local example-based explanations that show similar instances of training data",
+      "Provide counterfactual explanations, i.e., artificially generated examples that would 'flip' the AI's prediction by changing only a minimal amount of feature values."
     ],
     tradeOffs: [
-      "Percieved usefulness might decrease, when the users knows the AI could give a complete recommendation, but it is withheld",
-      "In structured and repetetive tasks full automation is likely to be more advantageous in regard to overall efficiency and human fatigue"
+      "Perceived usefulness may decrease if users know that the AI could make a full recommendation that it is being withheld",
+      "For structured and repetitive tasks, full automation is likely to be more beneficial in terms of overall efficiency and avoiding fatigue"
     ],
     related: [
       "featureImportance",
@@ -180,14 +180,14 @@ export default [{
     perspective: ["ux"],
     taskType: ["class", "det"],
     dataType: ["tab", "img", "text"],
-    title: "Present AI certainty with AI recommendation",
-    description: "Presenting the certainty of an AI prediction can help distinguish between good and bad recommendations.\nNumeric confidence scores are not always intuitive, depending on the capabilities of the users.",
+    title: "Present AI confidence with AI recommendation",
+    description: "Presenting the confidence of an AI prediction can help distinguish between good and bad recommendations.\nNumeric confidence scores are not always intuitive, depending on the capabilities of the users.",
     tips: [
       "Numerical confidence scores can be difficult to interpret",
-      "Visual and color coded represenations of confidence scores are easier to interpret",
+      "Visual and color-coded representations of confidence scores are easier to interpret",
     ],
     tradeOffs: [
-      "Depending on the calculation of confidence, it might not perfectly represent the probability that the AI is correct",
+      "Depending on how confidence is calculated, it may not perfectly represent the probability that the AI is correct",
     ],
     related: [
       "multiClassProbabilities"
@@ -204,11 +204,11 @@ export default [{
     taskType: ["class"],
     dataType: ["tab", "img", "text"],
     title: "Present multi-class probabilities",
-    description: "Presenting the probabilities of multiple classes can help the user to comprehend uncertainties more detailed in comparison to simple confidence scores. This is especially helpful, if, for example, there are multiple classes with similarly high probabilities.",
+    description: "Presenting the probabilities of multiple classes can help the user understand uncertainties in more detail than simple confidence values. This is especially helpful when, for example, there are multiple classes with similarly high probabilities.",
     tips: [
-      "Visual and color coded represenations of confidence are easier to interpret",
-      "Show x classes with the highest probabilities",
-      "Adapt based on set threshholds of probabilites or differences in probability to the most probable class"
+      "Visual and color-coded representations of probabilites are easier to interpret",
+      "Show probabilities for x classes where it is highest",
+      "Adjust based on set thresholds of probabilities or probability differences to the predicted class"
     ],
     tradeOffs: [
       "Too much information can lead to information overload",
@@ -229,7 +229,7 @@ export default [{
     perspective: ["ux"],
     dataType: ["tab", "img", "text"],
     title: "Present confidence intervals",
-    description: "Confidence intervals can provide insights into the uncertainty of an AI prediction in the case of a continous estimation task.",
+    description: "Confidence intervals can provide insight into the uncertainty of an AI prediction in the case of a continuous estimation task.",
     images: [{
       fileName: "confidenceInterval.png",
       description: "House price prediction task",
@@ -237,7 +237,7 @@ export default [{
       width: "60%"
     }],
     tips: [
-      "Visual representations in the form of a numeric beam with confidence and prediction values are easier to interpret than plain numeric values"
+      "Visual representations that show the confidence interval and predicted value are easier to interpret than simple numerical values"
     ],
     tradeOffs: [
       "Too much information can lead to information overload",
@@ -256,10 +256,10 @@ export default [{
     taskType: ["class", "reg", "det"],
     dataType: ["tab", "img", "text"],
     title: "Use personalized and adaptive AI-assistance",
-    description: "Different users, especially in diverse user groups, have different preferences and capabilities and interact differently with an AI System. Adaptive and personalized AI-assistance is one way to live up to this problem.",
+    description: "Different users, especially in diverse user groups, have different preferences and skills and interact with an AI system in different ways. Adaptive and personalized AI-assistance is one way to address this issue.",
     tips: [
-      "Adapt based on user preferences or metrics, such as, AI confidence or human and AI agreement",
-      "Train an AI System, estimating when assistance is likely to be benefitial and when not, in regard to one particular user (see Fügener et al. 2021)"
+      "Adapt based on user preferences or metrics, such as AI confidence or human-AI agreement",
+      "Train an AI system that estimates when assistance is likely to be beneficial and when it is not, with respect to a particular user (see Fügener et al. 2021)"
     ],
     synergies: [
       "notifyOutliers"
@@ -278,15 +278,15 @@ export default [{
     dataType: ["tab", "img", "text"],
     overReliance: false,
     title: "Use sensitivity analysis (feature importance)",
-    description: "Sensitivity analysis can provide useful insights into the decision of the AI by showing the features that contributed the most to a particular decision (feature importance).\nThe amount and the presentation of the information have to be carefully considered to not overwhelm the user.\nHow to use sensitivity analysis for the best results, depends mostly on the data type(s) of your task and the literacy of the users regarding AI and statistics.",
+    description: "Sensitivity analysis can provide useful insight into the AI decision by showing the features that contributed most to a particular decision (feature importance).\nThe amount and presentation of information must be carefully considered so as not to overwhelm the user.\nHow to use sensitivity analysis for best results depends mostly on the data type(s) of your task and the users' knowledge of AI and statistics.",
     tips: [
-      "Provide simple and understandable information especially for less AI literate users",
+      "Provide simple and understandable information, especially for less AI-literate users",
       "Highlighting only the most important features is often enough information",
-      "Visual and color coded representations are easier to understand",
-      "Point out most important features in natural language",
+      "Visual and color-coded representations are easier to understand",
+      "Use natural language to point out the most important features",
     ],
     tradeOffs: [
-      "Team performance might be lower than the performance of the best AI model working alone - you might consider full automation of this task",
+      "Team performance may be lower than the performance of the best AI model working alone - you may want to consider fully automating this task",
     ],
     images: [{
       fileName: "featureImportanceTabular.png",
@@ -320,15 +320,15 @@ export default [{
     perspective: ["ux", "ds"],
     dataType: ["img"],
     title: "Present classes with global representative examples",
-    description: "Global examples are obtained from the training data and aim to represent prototypes for each class. Showing these representative examples helps humans to comprehend the data distribution of the given classes.", //It also helps them to conduct the task by comparing the image to the example images.
+    description: "Global examples are obtained from the training data and are intended to represent prototypes for each class. Displaying these representative examples helps humans to understand the data distribution of the given classes.", //It also helps them to conduct the task by comparing the image to the example images.
     tips: [
       "Provide prototype (representative) examples",
-      "To provide a balanced understanding include outliers or problematic examples",
-      "Only feasible for relatively low amount of classes",
-      "Not feasible for images that require a great level of detail"
+      "Include outliers or problematic examples to provide a balanced understanding",
+      "Only feasible for a relatively small number of classes",
+      "Not feasible for images that require a high level of detail"
     ],
     tradeOffs: [
-      "The number of examples has to be appropriate to carry enough information to be generalizable without overloading the user"
+      "The number of examples must be appropriate to convey enough information to be generalizable without overwhelming the user"
     ],
     images: [{
       fileName: "classGlobalExamples.png",
@@ -348,15 +348,15 @@ export default [{
     perspective: ["ux", "ds"],
     overReliance: true,
     title: "Local example-based explanations",
-    description: "Local examples are instances from the training data set that are considered similar to the instance at hand. Local example-based explanations foster inductive decision making by the user.",
+    description: "Local examples are instances from the training data set that are considered similar to the current instance. Local example-based explanations promote inductive decision making by the user.",
     tips: [
-      "Example-based explanations work especially well with images",
-      "Show AI classification for examples",
+      "Images work particularly well for example-based explanations",
+      "Show AI prediction for examples",
       "Show examples, where the AI result matches the current instance"
     ],
     tradeOffs: [
-      "The number of examples has to be appropriate to carry enough information without overloading the user",
-      "Example-based explanations are particularly suitable for identifying erroneous AI recommendations"
+      "The number of examples must be appropriate to convey enough information without overwhelming the user.",
+      "Example-based explanations are particularly useful for identifying erroneous AI recommendations"
     ],
     related: [
       "classGlobalExamples",
@@ -378,23 +378,23 @@ export default [{
     perspective: ["ux"],
     overReliance: true,
     title: "Local example-based explanations with spatial layouts",
-    description: "Spatial layouts can help to visualize the similarities of different instances to the input instance. The closer an image is to the input image, the more similar they are.",
+    description: "Spatial layouts can help visualize the similarity of different instances to the input instance. The closer an image is to the input image, the more similar they are.",
     tips: [
       "Use grid layout, if the representation is easy to understand - columns represent classes",
       "Use tree layout, if the representation is difficult to read - root node is the input instance; leaves are instances with different predicted classes as the input",
-      "Escape routes algorithm to determine similarity/closesness (see Yang et al. 2020)"
+      "Escape routes algorithm to determine similarity/closeness (see Yang et al. 2020)"
     ],
     tradeOffs: [
-      "The number of pictures has to be appropriate to carry enough information without overloading the user"
+      "The number of images must be appropriate to convey enough information without overwhelming the user"
     ],
     images: [{
       fileName: "exampleSpatialLayout1.png",
-      description: "Leaf Classification - Grid Layout",
+      description: "Leaf classification - grid layout",
       source: "yang2020visual",
       width: "35%"
     }, {
       fileName: "exampleSpatialLayout2.png",
-      description: "Leaf Classification - Tree Layout",
+      description: "Leaf classification - tree layout",
       source: "yang2020visual",
       width: "50%"
     }],
@@ -412,13 +412,13 @@ export default [{
     dataType: ["tab", "img", "text"],
     projectState: ["concept", "running"],
     title: "Use explanations with appropriate cognitive effort",
-    description: "Humans are inherently trying to reduce the cognitive effort expended. This is why too demanding explanations might get ignored.",
+    description: "Humans naturally try to reduce cognitive effort. Therefore, explanations that are too demanding may be ignored.",
     tips: [
-      "Talk to potential users and make early tests to investigate their usage and understanding of XAI"
+      "Talk to potential users and conduct early testing to explore their use and understanding of XAI"
     ],
     tradeOffs: [
-      "Too cognitively demanding explanations are likely to be ignored",
-      "Too simple explanations might not contain meaningful information"
+      "Explanations that are too cognitively demanding are likely to be ignored",
+      "Explanations that are too simple may not contain meaningful information"
     ],
     related: [
       "infoOverload"
@@ -434,14 +434,14 @@ export default [{
     dataType: ["tab", "img", "text"],
     projectState: ["concept", "running"],
     title: "Use simple models",
-    description: "Simpler models are likely to have worse solo performance. Regarding complementarity we only look at team performance. When using simpler models, humans might be better able to understand AI decisions, assess their quality and incorporate them into their decision.",
+    description: "Simpler models are likely to have worse solo performance. For complementarity, we only look at team performance. When using simpler models, humans may be better able to understand AI decisions, assess their quality, and incorporate them into their decision-making.",
     tips: [
       "Build AI systems with parsimonious error boundaries",
       "Minimize the stochasticity of system errors",
       "Reduce task dimensionality when possible"
     ],
     tradeOffs: [
-      "Even when reaching CTP with a simple model, the team performance might still be lower than the performance of the best AI model working alone - you might consider full automation of this task"
+      "Even if CTP is achieved with a simple model, the team performance may still be lower than the performance of the best AI model working alone - you may want to consider fully automating this task"
     ],
     references: [
       { id: "lai2020chicago", proposal: false },
@@ -467,8 +467,8 @@ export default [{
       width: "45%"
     }],
     tradeOffs: [
-      "Compatible updates provide better team performance earlier",
-      "Incompatible but high performance updates have potential to reach better team performance in the long term"
+      "Compatible updates deliver better team performance sooner",
+      "Incompatible but high-performing updates have the potential to improve team performance in the long run"
     ],
     references: [
       { id: "bansal2019updates", proposal: false }
@@ -481,7 +481,7 @@ export default [{
     dataType: ["text", "img"],
     projectState: ["concept", "running"],
     title: "Prioritize precision over recall",
-    description: "When detecting spans in texts or sections in images, users tend to be better able to find missing detections compared to identifying wrong detections. For this reason false negatives are often more acceptable than false positives.",
+    description: "When detecting spans in text or sections in images, users tend to be better at finding missing detections than identifying incorrect detections. For this reason, false negatives are often more acceptable than false positives.",
     related: [
       "semiAuto"
     ],
@@ -495,10 +495,10 @@ export default [{
     taskType: ["det"],
     dataType: ["text", "img"],
     title: "Semi-automatition: AI for classification only",
-    description: "When performing a task consisting of a detection stage as well as a classification/estimation of found detections, AI can be used to assist in either of the tasks. In some cases, though, performing the detection task without assistance and the second task with assistance seems to be just the right amount of involvment and cognitive demand.",
+    description: "When performing a task that consists of a detection phase and a classification/estimation of the detections found, AI can be used to assist in one of the two tasks. In some cases, however, performing the detection task without assistance and the second task with assistance seems to be just the right amount of involvement and cognitive demand.",
     tradeOffs: [
-      "When AI detections are correct, this approach is more time-consuming",
-      "When AI detections are incorrect, this approach is likely to be more efficient"
+      "If AI detections are correct, this approach is more time-consuming",
+      "If AI detections are incorrect, this approach is likely to be more efficient"
     ],
     related: [
       "precisionOverRecall"

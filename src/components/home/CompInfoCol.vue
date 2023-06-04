@@ -3,16 +3,15 @@
   <div class="d-flex flex-column">
     <div class="text-container">
       <font class="text-normal">
-        Humans and AI have generally different capabilities. The goal is to enable AI and
-        humans to <font class="text-hl">make use of their respective strengths</font> and
-        to <font class="text-hl">overcome each others weaknesses</font>. If the team
-        performance exceeds both the performance of the AI and of the the human(s), the
+        In general, the capabilities of humans and AI are different. The goal is to enable AI and
+        humans to <font class="text-hl">leverage their respective strengths</font> and
+        <font class="text-hl">overcome each other's weaknesses</font>. If the team
+        performance exceeds the performance of both the AI and the the human(s), the
         result is called
         <font class="text-hl">complementary team performance (CTP)</font>.
       </font>
       <font class="text-normal">
-        To reach this goal, AI and the collaboration mechanisms of the system have to be
-        designed in a way that facilitates both humans' and AI's strengths.
+        To achieve this goal, the AI and the system's collaboration mechanisms must be designed in a way that capitalizes on the strengths of both humans and AI.
       </font>
     </div>
     <v-container>

@@ -1,5 +1,5 @@
 export default [{
-      question: "Hi there!\nTo help me understand which design patterns fit your project, I have to ask you some questions. If that is in your interest click 'Go on', otherwise switch to the filters tab, where you can freely explore design patterns.",
+      question: "Hi there!\nIn order for me to understand which design patterns are a good fit for your project, I have to ask you some questions. If you are interested, click 'Go on', otherwise switch to the Filters tab, where you can freely explore design patterns.",
       actions: [{
         text: "Go on! Guide me.",
         reset: true,
@@ -15,7 +15,7 @@ export default [{
             perspective: ["ds", "ux"]
           }
         }, {
-          text: "I am supervising/managing the project and want to have an overview over everything",
+          text: "I am supervising/managing the project",
           info: {
             role: "manager"
           },
@@ -34,12 +34,12 @@ export default [{
           }
         }]
     }, {
-      question: "Do you want see only design patterns for the Machine Learning/Data Science perspective?",
+      question: "Do you want see only design patterns for the machine learning/data science perspective?",
       condition: {
         role: "datascienctist"
       },
       answers: [{
-        text: "Yes, only Machine Learning/Data Science perspective!",
+        text: "Yes, only machine learning/data science perspective!",
         filters: {
           perspective: ["ds"]
         }
@@ -53,7 +53,7 @@ export default [{
         }
       }]
     }, {
-      question: "Do you want to see only design patterns regarding the design of the frontend and collaboration mechanisms?",
+      question: "Do you want to see only design patterns related to frontend design and explicit collaboration mechanisms?",
       condition: {
         role: "frontend"
       },
@@ -85,7 +85,7 @@ export default [{
           projectState: "concept"
         }
       }, {
-        text: "I already have an operating system that I want to improve",
+        text: "I already have an operating system and want to improve it",
         info: {
           modelTrained: true
         },
@@ -110,7 +110,7 @@ export default [{
         }
       }]
     }, {
-      question: "Do the errors of AI and humans tend to happen at the same or similar instances?",
+      question: "Do the errors of AI and humans tend to occur in the same or similar instances?",
       condition: {
         modelTrained: true
       },
@@ -128,36 +128,36 @@ export default [{
         },
       }]
     }, {
-      question: "That is a good start, because having complementarity potential is so critical. If you want to further increase this potential, consider the design pattern currently showing.",
-      condition: {
-        corErrors: true,
-        modelTrained: true
-      },
-    }, {
-      question: "It might be helpful to investigate this. Because having complementarity potential is so critical, have a look at the design pattern currently showing.",
-      condition: {
-        corErrors: undefined,
-        modelTrained: true
-      },
-    }, {
-      question: "That is not an optimal starting point for complementarity. Because having complementarity potential is so critical, have a look at the design pattern currently showing.",
+      question: "This is a good place to start because complementarity potential is so important. If you want to read more or increase that potential further, have a look at the design pattern that is currently being displayed.",
       condition: {
         corErrors: false,
         modelTrained: true
       },
     }, {
-      question: "To reach complementary team performance it is crucial that humans and AI can make use of their respective strengths while allowing the other one to make up for their weaknesses. So it is importannt to always keep this in mind. Have a look at the design pattern currently showing.",
+      question: "It may be helpful to investigate this. Because complementarity potential is so important, have a look at the design pattern that is currently being displayed.",
+      condition: {
+        corErrors: undefined,
+        modelTrained: true
+      },
+    }, {
+      question: "This is not an optimal starting point for complementarity. Because complementarity potential is so important, have a look at the design pattern that is currently being displayed.",
+      condition: {
+        corErrors: true,
+        modelTrained: true
+      },
+    }, {
+      question: "To achieve complementary team performance, it is important that humans and AI can leverage their respective strengths while allowing the other to compensate for their weaknesses. So it is importannt to always keep this in mind. Have a look at the design pattern that is currently being displayed.",
       condition: {
         modelTrained: false
       },
     }, {
-      question: "Take all the time you need.\nIf you want to move on for now, you can always revisit these design patterns later.",
+      question: "Take all the time you need.\nIf you want to move on for now, you can always revisit this design patterns later.",
       actions: [{
         text: "Go on"
       }],
       focus: "complementarityPotential",
     }, {
-      question: "Complementarity can be reached by targetting appropriate trust in the AI.\nHave you investigated the adherence of humans to AI advice?",
+      question: "Complementarity can be reached by targetting appropriate reliance in the AI.\nHave you investigated the reliance of humans on AI advice?",
       condition: {
         modelTrained: true        
       },
@@ -173,13 +173,13 @@ export default [{
         }
       }]
     }, {
-      question: "Do humans tend to overly adhere to AI advice or do they not trust AI enough?",
+      question: "Do humans tend to overly rely on AI advice or do they not rely on AI enough?",
       condition: {
         modelTrained: true,
         adherenceInvestigated: true
       },
       answers: [{
-        text: "Users overly adhere to AI",
+        text: "Users overly rely on AI",
         filters: {
           overReliance: false,
         },
@@ -193,19 +193,19 @@ export default [{
           diverseUsers: true
         }
       }, {
-        text: "Adherence to AI is too low",
+        text: "Reliance on AI is too low",
         filters: {
           overReliance: true,
         },
       }]
     }, {
-      question: "This can be very insightful to investigate. Often it is a mixture of both and can also be very dependent on the user performing the task.\nAdvice: Try to view incorrect acceptance of AI advice seperately from incorrect self trust.",
+      question: "This can be very insightful to investigate. Often it is a mixture of both, and can also be very dependent on the user performing the task.\nAdvice: Try to separate incorrect acceptance of AI advice from incorrect self trust.",
       condition: {
         modelTrained: true,
         adherenceInvestigated: false        
       },
     }, {
-      question: "How can the task(s) be classified?\nYou can select multiple types as well, if your task includes multiple different subtasks.",
+      question: "How can the task(s) be classified?\nYou can also select multiple types, if your task contains several different subtasks.",
       multiple: true,
       answers: [{
         text: "Value estimation (Regression)",
@@ -224,7 +224,7 @@ export default [{
         }
       }]
     }, {
-      question: "What are the data type(s) subject to this task?",
+      question: "What type(s) of data are involved in this task?",
       multiple: true,
       answers: [{
         text: "Structured (tabular) data",
@@ -243,7 +243,7 @@ export default [{
         }
       }]
     }, {
-      question: "Thank you for answering the questions. Based on your answers I selected fitting design patterns for your situation."
+      question: "Thank you for answering my questions. Based on your answers, I have selected suitable design patterns for your situation."
     }, {
-      question: "You can now switch to the filters tab to further explore the design patterns and adapt the preselected filters or restart the guidance questions, if you want, by clicking the button on the bottom left."
+      question: "You can now switch to the Filters tab to further explore the design patterns and customize the preselected filters or restart the guidance questions if you wish by clicking the button in the lower left."
     }]
