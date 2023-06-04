@@ -2,7 +2,7 @@
   <div class="d-flex flex-column align-center" style="gap: 16px">
     <div class="d-flex flex-column align-center mb-4">
       <font class="text-h4" color="#455A64">Patterns</font>
-      <font class="text-h7" color="#455A64">Best Practices from research</font>
+      <font class="text-h7" color="#455A64">Best Practices from Research</font>
     </div>
     <PatternGroup
       v-for="group in patternGroups"
