@@ -14,7 +14,7 @@ const routes = [
     ],
   },
   {
-    path: '/co-aid/patterns/',
+    path: '/co-aid/patterns',
     component: () => import('@/layouts/default/Default.vue'),
     children: [
       {
