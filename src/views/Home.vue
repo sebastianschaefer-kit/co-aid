@@ -4,7 +4,7 @@
     <v-row class="align-center">
       <v-col cols="4">
         <div class="text-h4">
-          <font color="primary">Co</font><font color="#455A64">mplementarity</font>
+          <font color="primary">Co</font><font color="#455A64">mplementary</font>
         </div>
         <div class="text-h4"><font color="primary">AI</font></div>
         <div class="text-h4">

@@ -73,7 +73,7 @@ export default {
         "Processing large amounts of data",
         "Consistency",
         "Finding patterns in data",
-        "Probilistic methdos",
+        "Probabilistic methods",
       ],
     };
   },
